@@ -1,0 +1,19 @@
+string vTitle = "";
+  string vDesc = "";
+  string FilePath = Server.MapPath("UploadToServer.cs");
+
+  if (!string.IsNullOrEmpty(Request.Form["title"]))
+  {
+    vTitle = Request.Form["title"];
+  }
+  if (!string.IsNullOrEmpty(Request.Form["description"]))
+  {
+    vDesc = Request.Form["description"];
+  }
+
+  HttpFileCollection MyFileCollection = Request.Files;
+  if (MyFileCollection.Count > 0)
+  {
+    // Save the File
+    MyFileCollection[0].SaveAs(FilePath);
+  }

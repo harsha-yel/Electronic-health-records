@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_google_signin_btn_text_light_default">
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/Name"
+        android:layout_width="400dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:text="Patient Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/name_header"
+            android:layout_weight="0.40" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:id="@+id/name_type"
+            android:layout_weight="0.40"
+            android:inputType="text"
+            android:textColorLink="?attr/actionMenuTextColor" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="400dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/Name"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/id_age"
+        android:paddingTop="10dp"
+        android:weightSum="1">
+
+        <TextView
+            android:text="Patient ID"
+            android:layout_height="wrap_content"
+            android:id="@+id/pat_id"
+            android:layout_width="93dp" />
+
+        <EditText
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:ems="10"
+            android:id="@+id/pat_id_type"
+            android:layout_weight="0.69"
+            android:inputType="text"
+            android:textColorLink="?attr/actionMenuTextColor" />
+
+        <TextView
+            android:text="Age"
+            android:layout_height="wrap_content"
+            android:id="@+id/age_header"
+            android:layout_width="92dp"
+            android:paddingLeft="50dp" />
+
+        <EditText
+            android:layout_width="66dp"
+            android:layout_height="match_parent"
+            android:ems="10"
+            android:id="@+id/age_type"
+            android:textSelectHandle="@android:drawable/editbox_dropdown_light_frame"
+            android:inputType="number"
+            android:textColorLink="?attr/actionMenuTextColor" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="120dp"
+        android:layout_height="90dp"
+        android:paddingTop="10dp"
+        android:id="@+id/linearLayout"
+        android:layout_below="@+id/id_age"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:text="Sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Sex"
+            android:layout_weight="0.22" />
+
+        <RadioGroup
+            android:layout_weight="0.22"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/sex_radio">
+
+            <RadioButton
+                android:text="Male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/mal"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:text="Female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fem"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_height="50dp"
+        android:id="@+id/run_stop"
+        android:layout_width="200dp"
+        android:layout_marginRight="14dp"
+        android:layout_marginEnd="14dp"
+        android:onClick="onClickRun"
+        android:paddingTop="10dp"
+        android:layout_below="@+id/id_age"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <Button
+            android:text="Run"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Run_id"
+            android:layout_weight="1"
+            android:fadingEdge="horizontal|vertical"
+            android:textColor="@android:color/black"
+            android:background="@android:color/holo_green_dark"
+            android:onClick="onClickRun"
+            android:elevation="4dp" />
+
+        <Button
+            android:text="Stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Stop_id"
+            android:layout_weight="1"
+            android:background="@android:color/holo_red_light"
+            android:onClick="onClickStop"
+            android:elevation="24dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="450dp"
+        android:layout_height="300dp"
+        android:id="@+id/graph_app"
+        android:orientation="horizontal"
+
+        android:background="@android:color/darker_gray"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/uploadButton"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/linearLayout"
+        android:layout_alignLeft="@+id/run_stop"
+        android:layout_alignStart="@+id/run_stop"
+        android:layout_below="@+id/run_stop"
+        android:background="@android:color/holo_blue_dark"
+        android:onClick="onClickUpload"
+        android:text="Upload" />
+
+    <Button
+        android:id="@+id/downloadButton"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/run_stop"
+        android:layout_alignRight="@+id/run_stop"
+        android:layout_alignTop="@+id/uploadButton"
+        android:background="?android:attr/colorPressedHighlight"
+        android:text="Download"
+        android:layout_alignBottom="@+id/uploadButton"
+        android:onClick="onClickDownload" />
+
+    <TextView
+        android:id="@+id/messageText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/graph_app"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_weight="1" />
+
+</RelativeLayout>
+
+
+
